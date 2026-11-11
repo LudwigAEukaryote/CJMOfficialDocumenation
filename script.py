@@ -46,13 +46,27 @@ for line, program in enumerate(tokens):
 
     if "RUN:" in program:
         if len("output!") == len(tokens[line + 1].strip()):
-            print()
-            #print empty line like in python"""
+            print("\n")
+            #print empty line like in python
+        
+
+
+##Assembler Code --> x86
+assembler = "first.asm"
+asm = open(assembler, 'w')
+##Allows python to be able to write in the assembly file
+
+asm.write("""; Info---
+bits 64
+default rel ; allows for adresses to be moved 
+
+""")
 
 
 
+"""
 print(tokens)
-print(vars)
+print(vars)"""
 
 
 

@@ -1,9 +1,5 @@
 STORE: X
 "Hello World"
 
-STORE: Y
-"I love you"
-
-
 RUN:
-output! 
+output!
