@@ -1,5 +1,12 @@
 STORE: X
 "Hello World"
 
+<<<<<<< HEAD
 RUN:
 output!
+=======
+
+
+RUN:
+output! 
+>>>>>>> b34559402e914211a712a194a2b894710a396b60
