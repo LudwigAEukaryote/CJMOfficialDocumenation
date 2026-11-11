@@ -44,7 +44,7 @@ for line, program in enumerate(tokens):
 
 
 
-    """if "RUN:" in program:
+    if "RUN:" in program:
         if len("output!") == len(tokens[line + 1].strip()):
             print()
             #print empty line like in python"""
