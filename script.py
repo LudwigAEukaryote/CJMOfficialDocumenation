@@ -32,11 +32,12 @@ for line, program in enumerate(tokens):
     # each program is the line of code
 
     if "STORE:" in program:
-        if len(program.strip()) < len("STORE:"):
+        if len(program.strip()) + 5 < len("STORE:"):
             print(f"Error: Line {line + 1}: missing variable name")
 
         elif tokens[line + 1].strip() == "":
             print(f"Error: Line {line + 2}: missing value to store")
+
 
 
         else: 
@@ -48,11 +49,10 @@ for line, program in enumerate(tokens):
         if len("output!") == len(tokens[line + 1].strip()):
             print("\n")
             #print empty line like in python
-        
 
 
 ##Assembler Code --> x86
-assembler = "first.asm"
+assembler = "assembler.asm"
 asm = open(assembler, 'w')
 ##Allows python to be able to write in the assembly file
 
@@ -62,7 +62,42 @@ default rel ; allows for adresses to be moved
 
 """)
 
+asm.write("""section .bss; this will hold varibles
 
+""")
+
+asm.write("""section .data ; this will hold constants --> only moved not changed
+
+""")
+
+asm.write("""section .text ; hold the main function --> assembly logic
+global main ; int main in C
+extern ExitProcess ; terminal can end Assembly program
+
+
+extern printf
+extern scanf
+;pulls these functions from C 
+;can read user input
+;GCC as linker
+
+main: ; entry port
+
+;creating shadow space --> 32 bytes
+
+\t PUSH rbp ; push the base pointer to the top of the stack
+\t MOV rbp, rsp ; move the the stack pointer into the base pointer
+\t SUB rsp, 32 ; subtract 32 from the bottom of the stack
+
+""")
+
+
+
+asm.close()
+#Closes the assembler
+
+for defs in vars:
+    if 
 
 """
 print(tokens)
