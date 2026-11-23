@@ -37,6 +37,9 @@ for line, program in enumerate(tokens):
 
         elif tokens[line + 1].strip() == "":
             print(f"Error: Line {line + 2}: missing value to store")
+        
+        elif not program.strip().endswith("}"):
+            print("Error: line", str(line + 1) + ": missing '}' ")
 
 
 
@@ -93,11 +96,15 @@ main: ; entry port
 
 
 
-asm.close()
+
 #Closes the assembler
 
-for defs in vars:
-    if 
+for value in vars:
+    if "cst" in value:
+        asm.write("") 
+
+
+asm.close()
 
 """
 print(tokens)
